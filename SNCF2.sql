@@ -46,6 +46,8 @@ CREATE TABLE IF NOT EXISTS `tgv` (
   `idgarearrivee` int(11) FOREIGN KEY NOT NULL, 
   `horairedepart` date NOT NULL, 
   `duree` time NOT NULL 
+  FOREIGN KEY(idgaredepart) REFERENCES gare(id)
+  FOREIGN KEY(idgarearrivee) REFERENCES gare(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1; 
 
 --
