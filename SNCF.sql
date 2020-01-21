@@ -30,7 +30,7 @@ USE `sncf`;
 -- Structure de la table `gare`
 --
 
-CREATE TABLE `gare` (
+CREATE TABLE IF NOT EXISTS `gare` (
   `id` int(11) NOT NULL,
   `nomgare` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -41,7 +41,7 @@ CREATE TABLE `gare` (
 -- Structure de la table `tgv`
 --
 
-CREATE TABLE `tgv` (
+CREATE TABLE IF NOT EXISTS `tgv` (
   `id` int(10) NOT NULL,
   `idgaredepart` int(11) NOT NULL,
   `idgarearrivee` int(11) NOT NULL,
