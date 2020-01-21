@@ -64,25 +64,7 @@ CREATE TABLE IF NOT EXISTS `tgv` (
 --
 
 --
--- AUTO_INCREMENT pour la table `gare`
---
-ALTER TABLE `gare`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT pour la table `tgv`
---
-ALTER TABLE `tgv`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1002;
---
--- Contraintes pour les tables déchargées
---
 
---
--- Contraintes pour la table `tgv`
---
-ALTER TABLE `tgv`
-  ADD CONSTRAINT `garearriv` FOREIGN KEY (`idgarearrivee`) REFERENCES `gare` (`id`),
-  ADD CONSTRAINT `garedepart` FOREIGN KEY (`idgaredepart`) REFERENCES `gare` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
