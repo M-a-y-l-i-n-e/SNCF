@@ -3,7 +3,7 @@
 $server="localhost";
 $user="user";
 $pass="test";
-$db="SNCF2";
+$db="SNCF";
 
 
 
