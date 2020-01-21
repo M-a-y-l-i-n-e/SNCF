@@ -56,8 +56,6 @@ CREATE TABLE IF NOT EXISTS `tgv` (
 --
 -- Index pour la table `gare`
 --
-ALTER TABLE `gare`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `tgv`
