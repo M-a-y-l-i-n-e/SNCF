@@ -57,13 +57,13 @@ CREATE TABLE IF NOT EXISTS `tgv` (
 -- Index pour la table `gare`
 --
 ALTER TABLE `gare`
-  ADD PRIMARY KEY IF NOT EXISTS (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `tgv`
 --
 ALTER TABLE `tgv`
-  ADD PRIMARY KEY IF NOT EXISTS (`id`),
+  ADD PRIMARY (`id`),
   ADD KEY `garearriv` (`idgarearrivee`),
   ADD KEY `garedepart` (`idgaredepart`);
 
