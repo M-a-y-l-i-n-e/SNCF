@@ -42,8 +42,8 @@ CREATE TABLE IF NOT EXISTS `gare` (
 --
 CREATE TABLE IF NOT EXISTS `tgv` ( 
   `id` int(10) PRIMARY KEY NOT NULL AUTO_INCREMENT, 
-  `idgaredepart` int(11) NOT NULL, 
-  `idgarearrivee` int(11) NOT NULL, 
+  `idgaredepart` int(11) KEY NOT NULL, 
+  `idgarearrivee` int(11) KEY NOT NULL, 
   `horairedepart` date NOT NULL, 
   `duree` time NOT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1; 
