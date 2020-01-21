@@ -3,7 +3,7 @@
 $server="10.69.8.65";
 $user="user";
 $pass="test";
-$db="SNCF";
+$db="sncf";
 
 
 
