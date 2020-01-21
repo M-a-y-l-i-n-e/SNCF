@@ -1,5 +1,3 @@
-//// param.php
-
 <?php
 
 $server="localhost";
