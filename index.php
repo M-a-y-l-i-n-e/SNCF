@@ -59,8 +59,8 @@ while ($row = mysql_fetch_assoc($result)) {
     echo "<td>".$row['id']."</td>";
     echo "<td>".$row['horairedepart']."</td>";
     echo "<td>".$row['duree']."</td>";
-    echo "<td>".$row['idgaredepart']."</td>";
-    echo "<td>".$row['idgarearrivee']."</td>";
+    echo "<td>".$row['b.nomgare']."</td>";
+    echo "<td>".$row['c.nomgare']."</td>";
 
     echo "</tr>";
 
