@@ -1,0 +1,78 @@
+- hosts: demo
+  vars:
+    http_port: 80
+    max_clients: 200
+  remote_user: root
+  tasks:
+  - name: ensure apache is at the latest version
+    yum:
+      name: httpd
+      state: latest
+      
+  - name: install php
+    yum:
+      name: php
+      state: latest
+
+  - name: install php mysql driver
+    yum:
+      name: php-mysql.x86_64
+      state: latest
+  
+  - name: ensure apache is running
+    service:
+      name: httpd
+      state: restarted
+
+  - name: copy files
+    git :
+      repo=https://github.com/M-a-y-l-i-n-e/SNCF.git
+      version=dev
+      dest=/var/www/html/
+
+  - name: install maria db
+    yum:
+      name: mariadb-server
+      state: latest
+
+  - name: install python2 module
+    yum:
+      name: MySQL-python
+      state: latest
+
+  - name: Start MariaDB
+#    shell: "systemctl start mariadb.service"
+    service: name=mariadb.service state=restarted
+
+  - name: intiate new user "user" with all database privileges
+    mysql_user:
+      host: 'localhost'
+      name: user
+      password: test
+      priv: '*.*:ALL'
+      state: present
+
+  - name: intiate new user "user" with all database privileges
+    mysql_user:
+      host: '%'
+      name: user
+      password: test
+      priv: '*.*:ALL'
+      state: present
+
+  - name: Import SNCF.sql 
+    mysql_db:
+      state: import
+      name: all
+      login_user: user
+      login_password: test
+      target: /var/www/html/SNCF2.sql
+
+#  - name: disable SELinux
+#    shell: "setenforce 0"
+
+  handlers:
+    - name: restart apache
+      service:
+        name: httpd
+        state: restarted
