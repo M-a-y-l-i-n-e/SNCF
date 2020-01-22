@@ -4,7 +4,7 @@ include "param.php";
 
 // C'est la meilleur façon d'exécuter une requête SQL
 // Pour plus d'exemples, voir mysql_real_escape_string()
-$query = "select a.id, b.nomgare as Gare_Départ, c.nomgare as Gare_Arrivée, a.horairedepart, a.duree from tgv a inner join gare b on a.idgaredepart=b.id innerjoin gare c on a.idgarearrivee=c.id order by horairedepart";
+$query = "select a.id, b.nomgare as Gare_Départ, c.nomgare as Gare_Arrivée, a.horairedepart, a.duree from tgv a inner join gare b on a.idgaredepart=b.id inner join gare c on a.idgarearrivee=c.id order by horairedepart";
 
 // Exécution de la requête
 $result = mysql_query($query);
