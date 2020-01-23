@@ -48,20 +48,6 @@ CREATE TABLE IF NOT EXISTS `tgv` (
   `duree` time NOT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1; 
 
---
--- Index pour les tables déchargées
---
-
---
--- Index pour la table `gare`
---
-
---
--- Index pour la table `tgv`
---
-
--- AUTO_INCREMENT pour les tables déchargées
---
 
 --
 
